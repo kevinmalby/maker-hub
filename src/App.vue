@@ -1,17 +1,15 @@
 <template>
- <div id="app">
-    <component :is="this.$route.meta.layout || 'LayoutPrimary'">
-      <router-view />
-    </component>
-  </div>
+  <component :is="this.$route.meta.layout || 'LayoutPrimary'">
+    <router-view />
+  </component>
 </template>
 
 <script>
+import LayoutPrimary from './layouts/LayoutPrimary'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    LayoutPrimary
+  }
 };
 </script>
-
-<style>
-
-</style>
