@@ -1,6 +1,6 @@
 <template>
 <div class="entity-card">
-  <q-card>
+  <q-card square >
     <q-img :src="imageSrc"> </q-img>
     <q-card-section>
       <div class="text-h6">{{ title }}</div>
@@ -17,8 +17,7 @@ export default {
 </script>
 
 <style scoped>
-.entity-card {
-  /* max-width: 350px;
-  max-height: 200px; */
-}
+/* .entity-card {
+  height: 20%;
+} */
 </style>
