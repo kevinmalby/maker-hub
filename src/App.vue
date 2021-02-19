@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import LayoutPrimary from './layouts/LayoutPrimary'
+import LayoutPrimary from './layouts/LayoutPrimary';
+
 export default {
   name: 'App',
   components: {
