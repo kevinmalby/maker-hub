@@ -7,7 +7,6 @@
     <q-btn flat>Support</q-btn>
   </div>
 
-  <q-separator />
   <router-view></router-view>
 </template>
 

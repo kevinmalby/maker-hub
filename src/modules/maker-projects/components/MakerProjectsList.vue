@@ -7,6 +7,7 @@
       :imageSrc="project.imageSrc"
       :title="project.title"
       :subtitle="project.subtitle"
+      :rating="project.rating"
     >
     </entity-card>
   </div>
@@ -21,6 +22,7 @@ export default {
         imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
         title: "Test Title",
         subtitle: "Here is some description text",
+        rating: 87
       },
       {
         id: 2,
@@ -33,6 +35,7 @@ export default {
         imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
         title: "Test Title",
         subtitle: "Here is some description text",
+        rating: 95
       },
       {
         id: 4,
@@ -45,6 +48,7 @@ export default {
         imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
         title: "Test Title",
         subtitle: "Here is some description text",
+        rating: 73
       },
       {
         id: 6,
