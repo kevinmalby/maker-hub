@@ -8,6 +8,7 @@
       :title="project.title"
       :subtitle="project.subtitle"
       :rating="project.rating"
+      :to="getProjectRoute(project.id)"
     >
     </entity-card>
   </div>
@@ -19,76 +20,88 @@ export default {
     const testData = [
       {
         id: 1,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
-        rating: 87
+        rating: 87,
       },
       {
         id: 2,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
       {
         id: 3,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
-        rating: 95
+        rating: 95,
       },
       {
         id: 4,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
       {
         id: 5,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
-        rating: 73
+        rating: 73,
       },
       {
         id: 6,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
       {
         id: 7,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
       {
         id: 8,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
       {
         id: 9,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
       {
         id: 10,
-        imageSrc: "https://cdn.quasar.dev/img/parallax2.jpg",
+        imageSrc: getRandomImageUrl(),
         title: "Test Title",
         subtitle: "Here is some description text",
       },
     ];
 
+    const getProjectRoute = ( projectId ) => `/projects/${projectId}`;
+
     return {
-      testData
+      testData,
+      getProjectRoute
     };
   },
 };
+
+function getRandomImageUrl() {
+  return `https://picsum.photos/id/${getRandomInt(0, 1000)}/600/400`;
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 </script>
 
 <style scoped>
-
 </style>

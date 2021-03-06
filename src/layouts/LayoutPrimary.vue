@@ -25,7 +25,6 @@
 
     <q-drawer
       v-model="isDrawerOpen"
-      
       :width="200"
       :breakpoint="500"
       bordered

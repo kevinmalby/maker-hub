@@ -1,22 +1,27 @@
 <template>
-  <maker-banner :description="description" makerName="Test Name"></maker-banner>
-  <div>
-    <q-btn flat to="/profiles/1/projects">Projects</q-btn>
-    <q-btn flat to="/profiles/1/videos">Videos</q-btn>
-    <q-btn flat>Stories</q-btn>
-    <q-btn flat>Support</q-btn>
+  <project-banner
+    :description="description"
+    projectName="Test Name"
+  ></project-banner>
+  <div class="row justify-between">
+    <div class="col-7">
+      <project-detail></project-detail>
+    </div>
+    <div class="col-5">
+      <div>Materials, etc.</div>
+    </div>
   </div>
-
-  <router-view></router-view>
 </template>
 
 <script>
-import { ref } from "vue";
-import MakerBanner from "./MakerBanner.vue";
+import ProjectBanner from "../modules/maker-project/components/ProjectBanner";
+import ProjectDetail from "../modules/maker-project/components/ProjectDetail";
 
+import { ref } from "vue";
 export default {
   components: {
-    MakerBanner,
+    ProjectBanner,
+    ProjectDetail,
   },
   setup() {
     const description = ref(

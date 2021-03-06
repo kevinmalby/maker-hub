@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import MakerProfile from '../modules/maker-profile/components/MakerProfile';
-import MakerProjectsList from '../modules/maker-projects/components/MakerProjectsList';
+import MakerProfile from '../pages/MakerProfile';
+import MakerProject from '../pages/MakerProject';
+import MakerProjectsList from '../modules/maker-profile/components/MakerProjectsList';
 
 export default createRouter({
     history: createWebHistory(),
@@ -17,6 +18,11 @@ export default createRouter({
                     component: MakerProjectsList
                 }
             ]
+        },
+        {
+            path: '/projects/:id',
+            component: MakerProject,
+            meta: { layout: 'LayoutPrimary' }
         }
     ]
 });
