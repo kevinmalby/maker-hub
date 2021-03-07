@@ -1,9 +1,9 @@
 <template>
   <q-scroll-area class="project-content">
-    <div>
+    <div class="video-overview q-mx-a">
       <q-video
         v-if="hasVideoOverview"
-        src="https://www.youtube.com/embed/gyp9EGhM368"
+        src="https://player.vimeo.com/video/89009039"
         :ratio="16 / 9"
       ></q-video>
     </div>
@@ -49,5 +49,9 @@ export default {
 <style scoped>
 .project-content {
   height: 75vh;
+}
+
+.video-overview {
+  max-width: 45vw;
 }
 </style>
