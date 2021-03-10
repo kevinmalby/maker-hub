@@ -1,0 +1,1 @@
+<template>This is the message content</template>

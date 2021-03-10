@@ -13,13 +13,24 @@
 
         <q-toolbar-title>Maker Hub</q-toolbar-title>
 
-        <q-input dark dense standout v-model="text" input-class="text-right" class="q-ml-md">
+        <q-input
+          dark
+          dense
+          standout
+          v-model="text"
+          input-class="text-right"
+          class="q-ml-md"
+        >
           <template v-slot:append>
             <q-icon v-if="text === ''" name="search" />
-            <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
+            <q-icon
+              v-else
+              name="clear"
+              class="cursor-pointer"
+              @click="text = ''"
+            />
           </template>
         </q-input>
-
       </q-toolbar>
     </q-header>
 
@@ -33,11 +44,7 @@
       <q-scroll-area class="fit">
         <q-list>
           <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item
-              clickable
-              :active="menuItem.label === 'Outbox'"
-              v-ripple
-            >
+            <q-item :to="menuItem.route" exact>
               <q-item-section avatar>
                 <q-icon :name="menuItem.icon"></q-icon>
               </q-item-section>
@@ -62,15 +69,19 @@
 
 <script>
 import { ref } from "vue";
+import { useStore } from "vuex";
 export default {
   setup() {
+    const store = useStore();
+
     const isDrawerOpen = ref(false);
-    const text = ref('');
+    const text = ref("");
     const menuList = [
       {
         icon: "inbox",
-        label: "Inbox",
+        label: "Messages",
         separator: true,
+        route: `/users/inbox/${store.getters.userId}`,
       },
       {
         icon: "send",
@@ -108,7 +119,7 @@ export default {
     return {
       isDrawerOpen,
       text,
-      menuList
+      menuList,
     };
   },
 };
