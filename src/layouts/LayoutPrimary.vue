@@ -61,7 +61,7 @@
       </q-scroll-area>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="main-content-container">
       <slot />
     </q-page-container>
   </q-layout>
@@ -124,3 +124,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.main-content-container {
+  height: 100vh;
+}
+</style>

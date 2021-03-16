@@ -2,12 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import MakerProfile from '../pages/MakerProfile';
 import MakerProject from '../pages/MakerProject';
-import MakerProjectsList from '../modules/maker-profile/components/MakerProjectsList';
 import UserInbox from '../pages/UserInbox';
+import HomePage from '../pages/HomePage';
+import MakerProjectsList from '../modules/maker-profile/components/MakerProjectsList';
 
 export default createRouter({
     history: createWebHistory(),
     routes: [
+        {
+            path: '/',
+            name: 'home',
+            meta: { layout: 'LayoutPrimary' },
+            component: HomePage
+        },
         {
             path: '/profiles/:id',
             name: 'MakerProfile',

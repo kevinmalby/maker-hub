@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import MessageList from "../modules/user-inbox/MessageList";
-import MessageContent from "../modules/user-inbox/MessageContent";
+import MessageList from "../modules/user-inbox/components/MessageList";
+import MessageContent from "../modules/user-inbox/components/MessageContent";
 export default {
   components: {
     MessageList,
