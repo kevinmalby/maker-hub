@@ -18,7 +18,10 @@
             <div class="row no-wrap">
               <user-activity-card class="col-2"></user-activity-card>
               <user-activity-card class="col-2"></user-activity-card>
-              <user-activity-card class="col-2"></user-activity-card>
+              <user-activity-card
+                hasVideo="true"
+                class="col-2"
+              ></user-activity-card>
               <user-activity-card class="col-2"></user-activity-card>
               <user-activity-card class="col-2"></user-activity-card>
               <user-activity-card class="col-2"></user-activity-card>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-card class="my-card" flat bordered>
+    <q-card class="cursor-pointer" flat bordered>
       <q-card-section horizontal>
         <q-card-section class="q-pt-xs">
           <div class="text-overline">Overline</div>

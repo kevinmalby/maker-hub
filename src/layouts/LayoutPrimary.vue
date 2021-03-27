@@ -19,7 +19,7 @@
           standout
           v-model="text"
           input-class="text-right"
-          class="q-ml-md"
+          class="q-mx-md"
         >
           <template v-slot:append>
             <q-icon v-if="text === ''" name="search" />
@@ -42,22 +42,7 @@
       content-class="bg-grey-3"
     >
       <q-scroll-area class="fit">
-        <q-list>
-          <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item :to="menuItem.route" exact>
-              <q-item-section avatar>
-                <q-icon :name="menuItem.icon"></q-icon>
-              </q-item-section>
-              <q-item-section>
-                {{ menuItem.label }}
-              </q-item-section>
-            </q-item>
-            <q-separator
-              :key="'sep' + index"
-              v-if="menuItem.separator"
-            ></q-separator>
-          </template>
-        </q-list>
+        <drawer-menu></drawer-menu>
       </q-scroll-area>
     </q-drawer>
 
@@ -69,57 +54,20 @@
 
 <script>
 import { ref } from "vue";
-import { useStore } from "vuex";
-export default {
-  setup() {
-    const store = useStore();
 
+import DrawerMenu from "../navigation/DrawerMenu";
+
+export default {
+  components: {
+    DrawerMenu,
+  },
+  setup() {
     const isDrawerOpen = ref(false);
     const text = ref("");
-    const menuList = [
-      {
-        icon: "inbox",
-        label: "Messages",
-        separator: true,
-        route: `/users/inbox/${store.getters.userId}`,
-      },
-      {
-        icon: "send",
-        label: "Outbox",
-        separator: false,
-      },
-      {
-        icon: "delete",
-        label: "Trash",
-        separator: false,
-      },
-      {
-        icon: "error",
-        label: "Spam",
-        separator: true,
-      },
-      {
-        icon: "settings",
-        label: "Settings",
-        separator: false,
-      },
-      {
-        icon: "feedback",
-        label: "Send Feedback",
-        separator: false,
-      },
-      {
-        icon: "help",
-        iconColor: "primary",
-        label: "Help",
-        separator: false,
-      },
-    ];
 
     return {
       isDrawerOpen,
       text,
-      menuList,
     };
   },
 };
